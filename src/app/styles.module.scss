@@ -1,0 +1,113 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 50px;
+
+  img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    box-shadow: 5px 10px 20px 0px var(--shadow-img-color);
+
+    @media (max-width: 768px) {
+      width: 200px !important;
+      height: 200px !important;
+    }
+
+    @media (max-width: 1366px) {
+      width: 300px !important;
+      height: 300px !important;
+    }
+  }
+
+  span {
+    overflow: visible !important;
+    font-size: clamp(2rem, 2.5vw, 3rem) !important;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    width: auto;
+
+    span {
+      margin: 0;
+      padding: 0;
+      color: var(--title-color);
+      font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+      font-family: "Montserrat", sans-serif;
+      text-transform: uppercase;
+      text-shadow: 1px 3px 5px var(--shadow-text-color);
+    }
+
+    p {
+      max-width: 450px;
+      line-height: 2rem;
+      font-size: clamp(1rem, 1vw, 1.5rem);
+      font-family: "Montserrat", sans-serif;
+      font-weight: 500;
+      font-style: italic;
+      color: var(--text-color);
+    }
+
+    > div {
+      display: flex;
+      gap: 30px;
+
+      a {
+        color: var(--text-color);
+        font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+        transition: 0.3s ease;
+
+        &:hover {
+          transform: scale(1.2);
+          color: var(--hover-text-color);
+        }
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    a:last-child {
+      background: transparent;
+      border: 1px solid;
+      padding: 10px 20px;
+      border-radius: 10px;
+
+      font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+      color: var(--text-color);
+      transition: 0.3s ease;
+      transform: scale(1.1);
+
+      &:hover {
+        color: var(--hover-text-color);
+        transform: scale(1);
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    padding: 30px 0;
+
+    .description {
+      padding: 0 10px;
+      text-align: center;
+      align-items: center;
+    }
+  }
+}

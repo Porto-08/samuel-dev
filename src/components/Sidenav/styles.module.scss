@@ -1,0 +1,129 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+
+  text-align: left;
+  background-color: var(--background-side-color);
+
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+
+  .changeMode {
+    position: absolute;
+    top: 20px;
+
+    border: 0;
+    background: none;
+
+    i {
+      font-size: clamp(1.75em, 2vw, 2.15em);
+      color: var(--title-color);
+      transform: 0.9s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--hover-text-color);
+      }
+    }
+
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+
+  .navContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    h2 > a {
+      font-size: clamp(2.5rem, 3vw, 3.25rem);
+      font-weight: bold;
+      font-family: "Montserrat", sans-serif;
+      color: var(--title-color);
+      text-transform: uppercase;
+      margin: 0;
+      padding: 0;
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: var(--hover-text-color);
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+        color: var(--title-color);
+        cursor: pointer;
+
+        font-size: clamp(1.5rem, 2vw, 1.75rem);
+
+        .info {
+          position: absolute;
+          left: 30px;
+          top: -5px;
+
+          visibility: hidden;
+
+          font-size: clamp(1rem, 1.5vw, 1.75rem);
+          color: var(--text-color);
+
+          background: var(--title-color);
+          color: var(--background-color);
+          padding: 5px 10px;
+
+          border-radius: 5px;
+        }
+
+        &:hover {
+          color: var(--hover-text-color);
+
+          .info {
+            visibility: visible;
+          }
+        }
+      }
+
+      a {
+        text-decoration: none;
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+        color: var(--text-color);
+        font-family: "Montserrat", sans-serif;
+
+        &:hover {
+          color: var(--hover-text-color);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    padding: 25px;
+    justify-content: center;
+
+    .navContainer {
+      align-items: center;
+
+      ul {
+        flex-direction: row;
+        gap: 40px;
+      }
+    }
+  }
+}

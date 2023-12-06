@@ -1,0 +1,227 @@
+.container {
+  padding: 20px;
+
+  @media (max-width: 800px) {
+    padding: 0 20px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 800px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  h1 {
+    text-align: left;
+    font-style: italic;
+    font-size: clamp(1.5rem, 2vw, 2.25rem);
+    padding: 0 0 20px 0;
+  }
+
+  .aboutMe {
+    div {
+      display: flex;
+      gap: 20px;
+      padding: 30px 0;
+
+      a {
+        background: transparent;
+        border: none;
+        font-size: clamp(2.25rem, 2vw, 2.75rem);
+        color: var(--text-color);
+        transition: 0.3s ease;
+
+        &:hover {
+          color: var(--hover-text-color);
+          transform: scale(1.2);
+        }
+      }
+
+      @media (max-width: 800px) {
+        padding: 15px 0;
+      }
+    }
+  }
+
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+
+    p {
+      font-size: clamp(1rem, 1.1vw, 1.5rem);
+      text-align: left;
+      font-style: italic;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+    }
+
+    .information {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: start;
+      gap: 20px;
+
+      .listProfile {
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 35px;
+          margin-top: 10px;
+
+          @media (max-width: 800px) {
+            gap: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+          }
+        }
+        
+        li {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          font-size: clamp(0.9rem, 1.3vw, 2rem);
+          font-style: italic;
+          font-weight: 500;
+
+          color: var(--title-color);
+
+          &::before {
+            content: "";
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--title-color);
+          }
+        }
+
+        span {
+          font-style: normal;
+          letter-spacing: 0.5px;
+          color: var(--hover-text-color);
+        }
+
+        a {
+          color: var(--hover-text-color);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1000px) {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+
+  .experiences {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+      font-size: clamp(1.25rem, 1.75vw, 2.25rem);
+      letter-spacing: 1px;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 30px;
+        height: 4px;
+        margin-top: 5px;
+        background-color: var(--background-side-color);
+      }
+    }
+  }
+
+  .skills {
+    padding: 10px 0;
+
+    .skillsBox {
+      padding: 30px 0 0 0;
+
+      h3 {
+        font-size: clamp(1.25rem, 1.5vw, 2rem);
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+
+        &::after {
+          display: block;
+          content: "";
+          width: 30px;
+          height: 4px;
+          margin-top: 5px;
+          background-color: var(--background-side-color);
+        }
+      }
+
+      .skillContent {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+        text-align: center;
+        justify-content: space-around;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+
+          font-size: clamp(3rem, 4vw, 5rem);
+          margin-bottom: 20px;
+          padding: 60px 0px;
+
+          color: var(--text-color);
+          background: var(--background-side-color);
+          box-shadow: 1px 10px 10px 0px rgba(0, 0, 0, 0.3);
+          border-radius: 5px;
+
+          transition: 0.6s ease;
+
+          &:hover {
+            background: var(--hover-text-color);
+          }
+        }
+
+        span {
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
+
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(4, 1fr);
+          justify-content: space-evenly;
+
+          a {
+            padding: 25px 0;
+          }
+        }
+
+        @media (max-width: 1000px) {
+          grid-template-columns: repeat(2, 1fr);
+          justify-content: space-evenly;
+
+          a {
+            padding: 25px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+:root {
+  --background-color: #fafafafb;
+  --background-side-color: #ffffffff;
+  --text-color: #444444;
+  --title-color: #000000;
+  --title-color-project: #fafafafa;
+  --text-color-project: #ffffff;
+  --hover-text-color: #61876e;
+  --shadow-text-color: rgba(0, 0, 0, 0.3);
+  --shadow-img-color: rgba(0, 0, 0, 0.6);
+  --placeholder-color: #444444;
+}
+
+.darkMode {
+  --background-color: #222831;
+  --background-side-color: #393e46;
+  --text-color: #eeeeee;
+  --title-color: #eeeeee;
+  --title-color-project: #eeeeee;
+  --text-color-project: #eeeeee;
+  --hover-text-color: #c6a6e3;
+  --shadow-text-color: rgba(0, 0, 0, 0.6);
+  --shadow-img-color: rgba(0, 0, 0, 0.9);
+  --placeholder-color: #fff;
+}
+
+.gray-profile {
+  filter: grayscale(100%);
+}
+
+.not-gray-profile {
+  filter: grayscale(0%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+  letter-spacing: 1px;
+}
+
+p,
+span {
+  color: var(--text-color);
+  letter-spacing: 0.5px;
+}
+
+body {
+  background: var(--background-color);
+  width: 100%;
+  scroll-behavior: smooth;
+  overflow: hidden;
+
+  @media (max-width: 1200px) {
+    overflow: auto;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 2px;
+  }
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+}
+
+.content {
+  overflow-y: scroll;
+  padding-bottom: 50px;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 0;
+    background-color: var(--background-side-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--hover-text-color);
+    border-radius: 50px;
+  }
+
+  @media (max-width: 1200px) {
+    overflow-y: initial;
+  }
+}
+
+::selection {
+  background: var(--hover-text-color);
+}
+
+.container {
+  transition: 0.3s ease;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 0 50px;
+
+  background-color: var(--background-color);
+
+  height: 100vh;
+  margin: 0 auto;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    aside {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+
+  aside {
+    z-index: 2;
+  }
+}
+
+.active {
+  color: var(--hover-text-color) !important;
+  text-decoration: underline !important;
+}
